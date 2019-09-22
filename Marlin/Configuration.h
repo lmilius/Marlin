@@ -362,7 +362,7 @@
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1 0.95      // Smoothing factor within any PID loop
 #if ENABLED(PIDTEMP)
-  //#define PID_AUTOTUNE_MENU // Add PID Autotune to the LCD "Temperature" menu to run M303 and apply the result.
+  #define PID_AUTOTUNE_MENU // Add PID Autotune to the LCD "Temperature" menu to run M303 and apply the result.
   //#define PID_DEBUG // Sends debug data to the serial port.
   //#define PID_OPENLOOP 1 // Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
   //#define SLOW_PWM_HEATERS // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
@@ -396,9 +396,21 @@
 
   // ANET A8 Standard Extruder at 235 Degree Celsius and 50% Fan
   //(measured after M106 S128 with M503 E0 S235 C5)
-  #define DEFAULT_Kp 30.36
-  #define DEFAULT_Ki 2.21
-  #define DEFAULT_Kd 104.45
+  //  #define DEFAULT_Kp 30.36
+  //  #define DEFAULT_Ki 2.21
+  //  #define DEFAULT_Kd 104.45
+
+  // E3D V6 Extruder at 190 Degree Celsius and 0% Fan
+  //(measured with M303 E0 S190 C5)
+  #define DEFAULT_Kp 28.28
+  #define DEFAULT_Ki 2.38
+  #define DEFAULT_Kd 83.88
+
+  // E3D V6 Extruder at 235 Degree Celsius and 0% Fan
+  //(measured with M303 E0 S235 C5)
+//  #define DEFAULT_Kp 25.06
+//  #define DEFAULT_Ki 1.94
+//  #define DEFAULT_Kd 81.08
 
 #endif // PIDTEMP
 
