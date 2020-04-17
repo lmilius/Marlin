@@ -400,11 +400,11 @@
   //  #define DEFAULT_Ki 2.21
   //  #define DEFAULT_Kd 104.45
 
-  // E3D V6 Extruder at 190 Degree Celsius and 0% Fan
-  //(measured with M303 E0 S190 C5)
-  #define DEFAULT_Kp 28.28
-  #define DEFAULT_Ki 2.38
-  #define DEFAULT_Kd 83.88
+  // E3D V6 Extruder at 190 Degree Celsius and 100% Fan
+  //(measured after M106 S255 with M303 E0 S190 C5)
+  #define DEFAULT_Kp 30.23
+  #define DEFAULT_Ki 2.56
+  #define DEFAULT_Kd 89.14
 
   // E3D V6 Extruder at 235 Degree Celsius and 0% Fan
   //(measured with M303 E0 S235 C5)
@@ -885,7 +885,7 @@
 
 //#define UNKNOWN_Z_NO_RAISE // Don't raise Z (lower the bed) if Z is "unknown." For beds that fall when Z is powered off.
 
-//#define Z_HOMING_HEIGHT 4  // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
+#define Z_HOMING_HEIGHT 6  // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
                              // Be sure you have this distance over your Z_MAX_POS in case.
 
 // Direction of endstops when homing; 1=MAX, -1=MIN
@@ -901,12 +901,12 @@
 #define Y_BED_SIZE 220
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -10
-#define Y_MIN_POS -10
+#define X_MIN_POS 0
+#define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 240
+#define Z_MAX_POS 230
 
 /**
  * Software Endstops
@@ -1146,8 +1146,8 @@
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-//#define MANUAL_X_HOME_POS 0
-//#define MANUAL_Y_HOME_POS 0
+#define MANUAL_X_HOME_POS 0
+#define MANUAL_Y_HOME_POS 3
 //#define MANUAL_Z_HOME_POS 0
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
